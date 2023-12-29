@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="homepagestyle.css">
+</head>
+<body>
+    <div class="userinfo">
+        <h1>Welcome, <span id="usernameDisplay"></span> to Type Battle Game!</h1>
+        <button id="practice" onclick="openpractice()" value="Practice">Let's Play!</button>
+    </div>
+
+
+    <script>
+
+        function openpractice(){
+            window.location.href="practice.html"; //Redirect to the practice page
+        }
+        
+        const username = localStorage.getItem('username');
+        if (username) { //if username exists
+            const capitalized =username.charAt(0).toUpperCase()+ username.slice(1)
+            document.getElementById('usernameDisplay').textContent = capitalized;
+        } else {
+        // If username is not found, redirect back to the first page
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h3 id="logo">TypeBattle</h1>
+    </div>
+    <form onsubmit="return handleSubmit() ">
+        <div class="content">
+            <h1>Enter your Name ?</h1>
+            <input type="text" name="user-name" id="user-name" placeholder="Enter your name">
+            <input type="submit" id="submitbtn" value="Lets Play !">
+        </div>
+    </form>
+    
+    <script>
+        function handleSubmit() {
+          const username = document.getElementById('user-name').value;
+          localStorage.setItem('username', username);
+          window.location.href = 'homepage.html'; // Redirect to the second home page
+          return false; // Prevent form submission to avoid page reload
+        }
+    </script>
+</body>
+
+</html>
